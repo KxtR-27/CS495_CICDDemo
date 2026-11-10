@@ -5,9 +5,13 @@
   "type": "module",
   "scripts": {
     "test": "node --test test/logic.test.js",
-    "build": "node scripts/build.mjs"
+    "build": "node scripts/build.mjs",
+    "format": "prettier --write \"*/**/*.{js,mjs,html,css,yml}\" --config ./.prettierrc"
   },
   "engines": {
     "node": ">=20"
+  },
+  "dependencies": {
+    "prettier": "^3.9.10"
   }
 }

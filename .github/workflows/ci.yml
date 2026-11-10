@@ -1,42 +1,42 @@
 name: CI
 
 on:
-  pull_request:
-    branches: [Dev, Prod]
-  push:
-    branches: [Dev]
+    pull_request:
+        branches: [Dev, Prod]
+    push:
+        branches: [Dev]
 
 permissions:
-  contents: read
+    contents: read
 
 jobs:
-  test:
-    name: CI - Tests
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v6
+    test:
+        name: CI - Tests
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out repository
+              uses: actions/checkout@v6
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v7
-        with:
-          node-version: '20'
+            - name: Set up Node.js
+              uses: actions/setup-node@v7
+              with:
+                  node-version: "20"
 
-      - name: Run automated tests
-        run: npm test
+            - name: Run automated tests
+              run: npm test
 
-  build:
-    name: CI - Build
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v6
+    build:
+        name: CI - Build
+        needs: test
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out repository
+              uses: actions/checkout@v6
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v7
-        with:
-          node-version: '20'
+            - name: Set up Node.js
+              uses: actions/setup-node@v7
+              with:
+                  node-version: "20"
 
-      - name: Build deployable site
-        run: npm run build
+            - name: Build deployable site
+              run: npm run build
