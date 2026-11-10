@@ -4,7 +4,7 @@ const completed = 8;
 const total = 10;
 const progress = calculateProgress(completed, total);
 
-document.querySelector("#completed").textContent = completed;
-document.querySelector("#total").textContent = total;
-document.querySelector("#progress").textContent = `${progress}%`;
-document.querySelector("#bar").style.width = `${progress}%`;
+document.getElementById("completed").textContent = completed;
+document.getElementById("total").textContent = total;
+document.getElementById("progress").textContent = `${progress}%`;
+document.getElementById("bar").style.width = `${progress}%`;
